@@ -156,7 +156,7 @@
           <div class="col-xl-4 offset-xl-4">
               <div class="section-header section-header_light">
                   <h2>Цены</h2>
-                  <p>Выберите вариант,который подходит Вам:</p>
+                  <p class="chose">Выберите вариант,который подходит Вам:</p>
                 </div>
           </div>
           <div class="col-xl-4">
@@ -167,40 +167,40 @@
         </div>
         <!-- Row -->
         <div class="row">
-          <div class="col-xl-4 col-lg-8">
+          <div class="col-xl-4 col-lg-8 offset-lg-2 offset-xl-0">
             <div class="price-block">
               <h4>Штукатурка вашим материалом
                 </h4>
               <img src="/src/img/prices/1.jpg" alt="">
-              <span class="price-tag">от 300 руб/м<sup>2</sup>
+              <span class="price-tag">от <span class="price-firm">300</span> руб/м<sup>2</sup>
                 </span>
               <ul class="price-list">
                 <li>Проведение работ</li>
                 <li>Уборка</li>
               </ul>
-                <button class="button">Заказать</button>
+                <button class="button btn-price-form">Заказать</button>
             </div>
           </div>
-          <div class="col-xl-4 col-lg-8">
+          <div class="col-xl-4 col-lg-8 offset-lg-2 offset-xl-0">
             <div class="price-block">
               <h4>Штукатурка под шпаклёвку
                 </h4>
               <img src="/src/img/prices/2.jpg" alt="">
-              <span class="price-tag">от 530 руб/м<sup>2</sup></span>
+              <span class="price-tag">от <span class="price-firm">530</span> руб/м<sup>2</sup></span>
               <ul class="price-list">
                 <li>Завоз материала и его подъём</li>
                 <li>Проведение работ</li>
                 <li>Уборка</li>
                 <li>Гарантия 2 года</li>
               </ul>
-              <button class="button">Заказать</button>
+              <button class="button btn-price-form">Заказать</button>
             </div>
           </div>
-          <div class="col-xl-4 col-lg-8 ">
+          <div class="col-xl-4 col-lg-8 offset-lg-2 offset-xl-0 ">
             <div class="price-block">
               <h4>Штукатурка под обои</h4>
-              <img src="/src/img/prices/3.jpg" alt="">
-              <span class="price-tag">от 560 руб/м<sup>2</sup></span>
+              <img src="img/prices/3.jpg" alt="">
+              <span class="price-tag">от <span class="price-firm">560</span> руб/м<sup>2</sup></span>
               <ul class="price-list">
                 <li>Завоз материала и его подъём</li>
                 <li>Проведение работ</li>
@@ -208,7 +208,7 @@
                 <li>Гарантия 2 года</li>
                 <li>Можно сразу клеить обои</li>
               </ul>
-              <button class="button">Заказать</button>
+              <button class="button btn-price-form">Заказать</button>
             </div>
           </div>
         </div>
@@ -271,9 +271,11 @@ $(document).ready(function(){
       breakpoint: 990,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 3,
+        prevArrow: '<button class="prev arrow"></button>',
+        nextArrow: '<button class="next arrow"></button>',
+        slidesToScroll: 1,
         infinite: true,
-        dots: true
+      
       }
     },
     {

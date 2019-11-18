@@ -326,6 +326,12 @@ section {
 
     &-header-btn {
         margin-top: 6rem;
+        width: 375px;
+        height: 65px;
+        box-shadow: 0 8px 13px rgba(0, 0, 0, 0.04);
+        border-radius: 8px;
+        border: 1px solid #ffba15;
+        font-size: 1.8rem;
     }
 
     &-button {
@@ -335,10 +341,12 @@ section {
     /* Тарифы */
     &-block {
         padding: 2rem 2rem 4rem;
-        min-height: 50rem;
+        min-height: 72rem;
         background-color: @light;
         box-shadow: 7px 12px 21px 0px rgba(0, 0, 0, 0.17);
         text-align: center;
+        box-sizing: border-box;
+
 
         h4 {
             margin: 3rem 0;
@@ -385,8 +393,25 @@ section {
             }
         }
     }
+
 }
 
+.btn-price-form {
+    width: 209px;
+    height: 65px;
+    box-shadow: 0 8px 13px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    border: 1px solid #ffba15;
+}
+
+.price-firm {
+    font-size: 3rem;
+    .bold();
+}
+
+.chose {
+    padding-top: 5rem;
+}
 
 
 /* Всплывающие окна */
@@ -483,7 +508,8 @@ section {
     .price {
         &-button {
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
+
         }
 
         &-header-btn {
@@ -491,6 +517,8 @@ section {
             margin-bottom: 2rem;
         }
     }
+
+
 
     .section-header_light {
         margin-bottom: 0;
@@ -545,7 +573,14 @@ section {
 
 }
 
-@media (min-width: 320px) and (max-width: 991px) {
+@media (min-width: 320px) and (max-width: 410px) {
+    .price-header-btn {
+        width: 80%;
+        font-size: 1.rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 1199px) {
     .price {
 
         &-block {
