@@ -10,12 +10,12 @@
 /* fonts */
 @font-face {
     font-family: 'ProximaNova_reg';
-    src: url('../fonts/ProximaNova/ProximaNova-Regular.eot');
-    src: url('../fonts/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2'),
-        url('../fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
-        url('../fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype'),
-        url('../fonts/ProximaNova/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+    src: url('src/fonts/ProximaNova/ProximaNova-Regular.eot');
+    src: url('src/fonts/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+        url('src/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2'),
+        url('src/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+        url('src/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype'),
+        url('src/fonts/ProximaNova/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -88,9 +88,21 @@ section {
 
 .section-header {
     margin: 6rem 0 10rem;
-    .bold();
-    font-size: 3.6rem;
     text-align: center;
+
+    &_light {
+        color: @light;
+
+    }
+
+    h2 {
+        .bold();
+        font-size: 3.6rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
 }
 
 /* main */
@@ -308,6 +320,75 @@ section {
     background-size: 70%;
 }
 
+/* Prices section */
+.price {
+    background: @icons-color url(../img/prices/prices-bg.jpg) center;
+
+    &-header-btn {
+        margin-top: 6rem;
+    }
+
+    &-button {
+        text-align: right;
+    }
+
+    /* Тарифы */
+    &-block {
+        padding: 2rem 2rem 4rem;
+        min-height: 50rem;
+        background-color: @light;
+        box-shadow: 7px 12px 21px 0px rgba(0, 0, 0, 0.17);
+        text-align: center;
+
+        h4 {
+            margin: 3rem 0;
+            font-style: 1.9rem;
+            .bold();
+
+        }
+
+        img {
+            width: 100%;
+            max-width: 30rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+
+        }
+
+    }
+
+    &-tag {
+        display: block;
+        margin-bottom: 2rem;
+        font-size: 1.9rem;
+        .bold();
+
+    }
+
+    &-list {
+        padding: 0;
+        list-style: none;
+        min-height: 17rem;
+        font-size: 1.9rem;
+        line-height: 3rem;
+
+        li {
+            &:before {
+                content: '';
+                display: inline-block;
+                margin-right: 1rem;
+                width: 1.1rem;
+                height: 1.1rem;
+                background: url(../img/prices/cheked.svg) no-repeat center;
+                background-size: 100%;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+
 /* Всплывающие окна */
 .popup {
     display: none;
@@ -364,6 +445,24 @@ section {
 }
 
 /* Media запросы */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .price {
+        &-button {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        &-header-btn {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .section-header_light {
+        margin-bottom: 0;
+    }
+}
+
 @media (max-width: 991px) {
     .main {
         background-position: top left;
@@ -379,6 +478,22 @@ section {
 
     .main-tittle {
         text-align: center;
+    }
+
+    .price {
+        &-button {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        &-header-btn {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .section-header_light {
+        margin-bottom: 0;
     }
 }
 
@@ -396,14 +511,12 @@ section {
     }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 576px) and (max-width: 767px) {
     .main-content {
         margin-top: 14rem;
     }
 
-    .header {
-        text-align: center;
-    }
+
 
     .warp-block {
         text-align: center;
@@ -415,12 +528,9 @@ section {
         margin-top: 14rem;
     }
 
-    .header {
-        text-align: center;
-    }
-
-    .warp {
-        text-align: center;
+    .my-btn {
+        display: block;
+        margin: 0 auto;
 
     }
 
@@ -435,23 +545,11 @@ section {
 
 }
 
-@media (max-width: 574) {
-    .warp-block {
-        text-align: center;
+@media (min-width: 320px) and (max-width: 991px) {
+    .price {
 
+        &-block {
+            margin-top: 2rem;
+        }
     }
-
-    .warp {
-        text-align: center;
-
-    }
-}
-
-@media (max-width: 320px) {
-    .main-content h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-
 }
